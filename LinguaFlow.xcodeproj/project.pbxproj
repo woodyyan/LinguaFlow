@@ -20,6 +20,7 @@
 		A10011 /* LanguageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10011; };
 		A10012 /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10012; };
 		A10013 /* ChineseVariantConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10014; };
+		A10014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10015; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B10012 /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
 		B10013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B10014 /* ChineseVariantConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseVariantConverter.swift; sourceTree = "<group>"; };
+		B10015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D10002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10014 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXGroup section */
 		G10000 = {
@@ -72,6 +85,7 @@
 			children = (
 				B10001 /* LinguaFlowApp.swift */,
 				B10013 /* Info.plist */,
+				B10015 /* Assets.xcassets */,
 				G10002 /* Models */,
 				G10003 /* Services */,
 				G10004 /* Utilities */,
@@ -145,6 +159,7 @@
 			buildPhases = (
 				D10000 /* Sources */,
 				D10001 /* Frameworks */,
+				D10002 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +276,7 @@
 		X10D01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -285,6 +301,7 @@
 		X10R01 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
