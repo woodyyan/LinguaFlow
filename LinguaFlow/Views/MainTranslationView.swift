@@ -91,6 +91,12 @@ struct MainTranslationView: View {
             }
             .keyboardShortcut("/", modifiers: .command)
             .hidden()
+            // ⌘ Shift C 复制翻译结果
+            Button("") {
+                viewModel.copyTranslation()
+            }
+            .keyboardShortcut("c", modifiers: [.command, .shift])
+            .hidden()
         }
         // 复制成功 Toast
         .overlay(alignment: .bottom) {
