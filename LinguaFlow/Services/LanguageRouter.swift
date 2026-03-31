@@ -8,35 +8,29 @@ final class LanguageRouter {
     /// 根据输入文本和用户选择的模式，确定翻译方向
     func detectRoute(for text: String, mode: TranslationMode) -> TranslationRoute {
         guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            // 空文本时返回默认方向
-            return mode == .cantonese ? .simplifiedToCantonese : .englishToChinese
+            return mode == .traditional ? .simplifiedToTraditional : .englishToChinese
         }
 
         recognizer.reset()
         recognizer.processString(text)
 
         guard let dominant = recognizer.dominantLanguage else {
-            // 无法识别时按模式给默认值
-            return mode == .cantonese ? .simplifiedToCantonese : .englishToChinese
+            return mode == .traditional ? .simplifiedToTraditional : .englishToChinese
         }
 
         switch mode {
         case .englishChinese:
-            // 英↔中模式
             if dominant == .english {
                 return .englishToChinese
             } else {
                 return .chineseToEnglish
             }
 
-        case .cantonese:
-            // 简↔粤模式
+        case .traditional:
             if dominant == .traditionalChinese {
-                // 繁体 → 视为粤语输入 → 翻成简体
-                return .cantoneseToSimplified
+                return .traditionalToSimplified
             } else {
-                // 简体或其他 → 翻成粤语
-                return .simplifiedToCantonese
+                return .simplifiedToTraditional
             }
         }
     }

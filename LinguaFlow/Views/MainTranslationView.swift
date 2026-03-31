@@ -83,6 +83,15 @@ struct MainTranslationView: View {
         .onSubmit {
             viewModel.submitTranslation()
         }
+        // ⌘/ 切换模式（隐藏按钮承载快捷键）
+        .background {
+            Button("") {
+                let next: TranslationMode = viewModel.mode == .englishChinese ? .traditional : .englishChinese
+                viewModel.switchMode(to: next)
+            }
+            .keyboardShortcut("/", modifiers: .command)
+            .hidden()
+        }
         // 复制成功 Toast
         .overlay(alignment: .bottom) {
             if viewModel.showCopiedToast {
@@ -224,8 +233,8 @@ struct MainTranslationView: View {
         switch viewModel.mode {
         case .englishChinese:
             return "输入英文或中文..."
-        case .cantonese:
-            return "输入简体中文或粤语繁体..."
+        case .traditional:
+            return "输入简体中文或繁体中文..."
         }
     }
 }

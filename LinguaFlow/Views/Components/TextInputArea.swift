@@ -30,35 +30,33 @@ struct TextInputArea: View {
                 .textCase(.uppercase)
                 .tracking(0.5)
 
-            ZStack(alignment: .topLeading) {
+            Group {
                 if isEditable {
-                    TextEditor(text: $text)
+                    TextField(placeholder, text: $text, axis: .vertical)
                         .font(.system(size: 15))
-                        .scrollContentBackground(.hidden)
-                        .padding(8)
+                        .textFieldStyle(.plain)
+                        .lineLimit(5...20)
                         .onChange(of: text) { _, _ in
                             onTextChange?()
                         }
                 } else {
                     ScrollView {
-                        Text(text)
-                            .font(.system(size: 15))
-                            .textSelection(.enabled)
-                            .frame(maxWidth: .infinity, alignment: .topLeading)
-                            .padding(12)
+                        if text.isEmpty {
+                            Text(placeholder)
+                                .font(.system(size: 15))
+                                .foregroundColor(.secondary.opacity(0.5))
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                        } else {
+                            Text(text)
+                                .font(.system(size: 15))
+                                .textSelection(.enabled)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                        }
                     }
                 }
-
-                // Placeholder
-                if text.isEmpty {
-                    Text(placeholder)
-                        .font(.system(size: 15))
-                        .foregroundColor(.secondary.opacity(0.5))
-                        .padding(isEditable ? 16 : 12)
-                        .allowsHitTesting(false)
-                }
             }
-            .frame(maxWidth: .infinity, minHeight: 120)
+            .padding(12)
+            .frame(maxWidth: .infinity, minHeight: 120, alignment: .topLeading)
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(nsColor: .textBackgroundColor))

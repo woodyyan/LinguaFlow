@@ -53,7 +53,7 @@ final class TranslationViewModel: ObservableObject {
             errorMessage = nil
             isTranslating = false
             debouncer.cancel()
-            currentRoute = mode == .cantonese ? .simplifiedToCantonese : .englishToChinese
+            currentRoute = mode == .traditional ? .simplifiedToTraditional : .englishToChinese
             return
         }
 
@@ -89,7 +89,7 @@ final class TranslationViewModel: ObservableObject {
             currentRoute = languageRouter.detectRoute(for: text, mode: mode)
             submitTranslation()
         } else {
-            currentRoute = mode == .cantonese ? .simplifiedToCantonese : .englishToChinese
+            currentRoute = mode == .traditional ? .simplifiedToTraditional : .englishToChinese
             translatedText = ""
         }
     }
@@ -154,9 +154,9 @@ final class TranslationViewModel: ObservableObject {
     /// 本地简繁转换（即时完成，不走 Apple Translation）
     private func performLocalConversion(text: String, route: TranslationRoute) {
         switch route {
-        case .simplifiedToCantonese:
+        case .simplifiedToTraditional:
             translatedText = chineseConverter.simplifiedToTraditional(text)
-        case .cantoneseToSimplified:
+        case .traditionalToSimplified:
             translatedText = chineseConverter.traditionalToSimplified(text)
         default:
             break
