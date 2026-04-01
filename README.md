@@ -4,6 +4,8 @@
 
 ![macOS 15+](https://img.shields.io/badge/macOS-15%2B-blue) ![Swift](https://img.shields.io/badge/Swift-5-orange) ![License](https://img.shields.io/badge/license-MIT-green)
 
+![screenshot](screenshot.png)
+
 ## ✨ 功能
 
 ### 英↔中翻译
