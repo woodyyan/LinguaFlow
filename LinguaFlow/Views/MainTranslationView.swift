@@ -112,7 +112,12 @@ struct MainTranslationView: View {
     // MARK: - Sub Views
 
     private var headerBar: some View {
-        HStack {
+        HStack(spacing: 8) {
+            Image("Logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 24, height: 24)
+
             Text("LinguaFlow")
                 .font(.system(size: 16, weight: .semibold))
                 .foregroundColor(.primary)

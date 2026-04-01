@@ -1,8 +1,16 @@
-# LinguaFlow
+<p align="center">
+  <img src="AppIcon.png" width="128" height="128" alt="LinguaFlow Logo">
+</p>
 
-一款轻量的 macOS 原生翻译应用，专注于**英↔中翻译**和**简↔繁转换**两个核心场景。
+<h1 align="center">LinguaFlow</h1>
 
-![macOS 15+](https://img.shields.io/badge/macOS-15%2B-blue) ![Swift](https://img.shields.io/badge/Swift-5-orange) ![License](https://img.shields.io/badge/license-MIT-green)
+<p align="center">一款轻量的 macOS 原生翻译应用，专注于<strong>英↔中翻译</strong>和<strong>简↔繁转换</strong>两个核心场景。</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/macOS-15%2B-blue" alt="macOS 15+">
+  <img src="https://img.shields.io/badge/Swift-5-orange" alt="Swift">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+</p>
 
 ![screenshot](screenshot.png)
 
